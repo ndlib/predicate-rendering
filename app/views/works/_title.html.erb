@@ -1,0 +1,5 @@
+<% dc_titles.each_with_index do |dc_title, index| %>
+<div class="dc-title-<%= index %>">
+  <label for="dc-title-<%= index %>">Title:</label> <span name="DC.Title" xml:lang="EN" content="<%= dc_title %>"   id="dc-title-<%= index %>"><%= dc_title %></span>
+</div>
+<% end %>
