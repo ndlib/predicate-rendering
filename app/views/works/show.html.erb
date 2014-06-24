@@ -1,2 +1,7 @@
+<% @dc_titles = ["Adventures in Dublin Core", "Metadata Rox!"] %>
+
 <h1>Works#show</h1>
-<p>Find me in app/views/works/show.html.erb</p>
+<article>
+
+  <%= render(:partial => "title", :locals => {:dc_titles => @dc_titles}) %>
+</article>

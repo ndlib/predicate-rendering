@@ -5,6 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <link rel="schema.DC" href="http://purl.org/dc/terms/">
+  <meta name="DC.Identifier" schema="DCterms:URI"
+        content=<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %> />
+  <meta name="DC.Format" schema="DCterms:IMT" content="text/html" />
+  <% @dc_titles.each do |dc_title| %>
+     <meta name="DC.Title" xml:lang="EN" content="<%= dc_title %>" />
+  <% end %>
 </head>
 <body>
 
