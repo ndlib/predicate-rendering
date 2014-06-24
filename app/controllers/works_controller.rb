@@ -1,6 +1,6 @@
 class WorksController < ApplicationController
   def show
-    @work = true
+    @work = Hydramata::Work::Entity.new(work_type: 'article')
   end
 
   def new
