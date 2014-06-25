@@ -10,9 +10,9 @@
   <meta name="DC.Identifier" schema="DCterms:URI"
         content=<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %> />
   <meta name="DC.Format" schema="DCterms:IMT" content="text/html" />
-  <% @dc_titles.each do |dc_title| %>
-     <meta name="DC.Title" xml:lang="EN" content="<%= dc_title %>" />
-  <% end %>
+  <%# @dc_titles.each do |dc_title| %>
+     <meta name="DC.Title" xml:lang="EN" content="<%#= dc_title %>" />
+  <%# end %>
 </head>
 <body>
 
