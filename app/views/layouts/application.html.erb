@@ -1,20 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="EN">
 <head>
+  <meta charset="utf-8">
   <title>Predicate</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <link rel="schema.DC" href="http://purl.org/dc/terms/">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+
   <meta name="DC.Identifier" schema="DCterms:URI"
         content=<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %> />
   <meta name="DC.Format" schema="DCterms:IMT" content="text/html" />
-  <% @dc_titles.each do |dc_title| %>
-     <meta name="DC.Title" xml:lang="EN" content="<%= dc_title %>" />
+  <% @titles.each_with_index do |title, index| %>
+    <% if index == 0 %>
+      <meta name="DC.Title" xml:lang="EN" lang="EN" content="<%= title %>" />
+    <% else %>
+      <meta name="DC.Alternative" xml:lang="EN" lang="EN" content="<%= title %>" />
+    <% end %>
   <% end %>
 </head>
-<body>
+  <body vocab="http://schema.org/" typeof="WebPage" itemscope itemtype="http://schema.org/WebPage">
 
 <%= yield %>
 
