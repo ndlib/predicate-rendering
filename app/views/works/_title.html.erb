@@ -1,0 +1,13 @@
+<% titles.each_with_index do |title, index| %>
+  <% if index == 0 %>
+    <dl itemprop="name" itemscope itemtype="http://schema.org/Text" class="dc-title">
+      <dt itemprop="label">Title</dt>
+      <dd  itemprop="value" content="<%= title %>" id="dc-title"><%= title %></dd>
+    </dl>
+  <% else %>
+    <dl itemprop="alternateName" itemscope itemtype="http://schema.org/Text" class="dc-alternative-<%= index - 1 %>">
+      <dt itemprop="label">Alternative Title</dt>
+      <dd itemprop="value" content="<%= title %>" id="dc-alternative-<%= index - 1 %>"><%= title %></dd>
+    </dl>
+  <% end %>
+<% end %>

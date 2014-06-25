@@ -1,7 +1,7 @@
-<% @dc_titles = ["Adventures in Dublin Core", "Metadata Rox!"] %>
+<% @titles = ["Adventures in Dublin Core", "Metadata Rox!"] %>
 
 <h1>Works#show</h1>
-<article>
-
-  <%= render(:partial => "title", :locals => {:dc_titles => @dc_titles}) %>
+<article typeof="Article" itemscope itemtype="http://schema.org/Article">
+  <h2>Article</h2>
+  <%= render(:partial => "title", :locals => {:titles => @titles}) %>
 </article>
