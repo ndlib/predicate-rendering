@@ -1,0 +1,4 @@
+<dt class="<%= show.dom_class %> label"><%= show.t(:name) %></dt>
+<%- show.each_with_index do |value, index| -%>
+  <dd  itemprop="name" property="name" class="<%= show.dom_class %> value" id="<%= show.dom_class %>-<%= index %>"><%= value %></dd>
+<%- end -%>
