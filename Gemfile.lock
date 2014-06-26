@@ -2,6 +2,7 @@ PATH
   remote: ../Gems/hydramata-work
   specs:
     hydramata-work (0.0.1.pre)
+      psych (~> 2.0.5)
       rails (~> 4.0)
       rdf (~> 1.1)
 
@@ -125,6 +126,7 @@ GEM
     pry-rescue (1.4.1)
       interception (>= 0.5)
       pry
+    psych (2.0.5)
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
