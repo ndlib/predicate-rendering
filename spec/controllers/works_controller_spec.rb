@@ -1,5 +1,5 @@
 require "spec_helper"
-require 'hydramata/work/linters/implement_entity_interface_matcher'
+require 'hydramata/works/linters/implement_work_interface_matcher'
 
 describe WorksController do
 
@@ -8,7 +8,7 @@ describe WorksController do
 
     it "should assign a work object" do
       get(:show)
-      expect(assigns(:work)).to implement_entity_interface
+      expect(assigns(:work)).to implement_work_interface
     end
     it "renders the show template" do
       get(:show)

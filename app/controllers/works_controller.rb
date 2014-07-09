@@ -1,13 +1,18 @@
-require 'hydramata/work/conversions/presenter'
-require 'hydramata/work/conversions/property'
+require 'hydramata/works/conversions/presenter'
+require 'hydramata/works/conversions/property'
 
 class WorksController < ApplicationController
-  include Hydramata::Work::Conversions
+  include Hydramata::Works::Conversions
   def show
-    work = Hydramata::Work::Entity.new(work_type: 'article') do |w|
+    work = Hydramata::Works::Work.new(work_type: 'article') do |w|
       w.properties << Property("http://purl.org/dc/terms/title", "Adventures in Dublin Core", "Metadata Rox!")
     end
-    #binding.pry
     @work = Presenter(work)
+  end
+
+  def new
+    work = Hydramata::Works::Work.new(work_type: 'article')
+    presenter = Hydramata::Works::WorkPresenter.new(work: work, presentation_context: :new)
+    @work = Hydramata::Works::WorkForm.new(presenter)
   end
 end

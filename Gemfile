@@ -10,7 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
-gem 'hydramata-work', path: "../Gems/hydramata-work"
+gem 'hydramata-works', github: 'jeremyf/hydramata-works'
 
 group :development do
   gem 'better_errors'
